@@ -24,3 +24,15 @@
   border-radius: 20px;
   border: 2px solid black;
 }
+.register-page-button {
+  margin-top: 20px;
+  background-color: tomato;
+  border: 2px solid tomato;
+  color: white;
+  font-weight: bolder;
+}
+.register-page-link {
+  text-align: center;
+  justify-content: center;
+  margin: 20px;
+}

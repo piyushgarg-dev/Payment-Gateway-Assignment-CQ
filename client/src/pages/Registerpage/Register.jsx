@@ -21,6 +21,12 @@ const Register = () => {
           Confirm Password
         </label>
         <input type="password" id="confirm" className="register-form-input" />
+        <button className="register-page-button register-form-input">
+          SIGN UP
+        </button>
+        <div className="register-page-link">
+          <a href="/">Back to login</a>
+        </div>
       </div>
     </div>
   );
