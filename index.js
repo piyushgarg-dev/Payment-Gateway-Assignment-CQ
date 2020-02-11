@@ -31,6 +31,10 @@ mongoose
     console.log(chalk.bgRedBright.black(` MongoDB Error: ${err} `));
   });
 
+//   ROUTES
+
+app.use("/api/auth", require("./routes/api/auth/auth"));
+
 // Listner
 app.listen(process.env.PORT, () => {
   console.log(

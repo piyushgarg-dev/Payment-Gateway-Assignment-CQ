@@ -1,0 +1,32 @@
+.login-page {
+  max-width: 550px;
+  margin: auto;
+
+  border-radius: 2px;
+}
+.login-page-head {
+  color: black;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+}
+.form-label {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+.login-form-submit {
+  display: block;
+  margin-top: 40px;
+  background-color: tomato;
+  color: white;
+  font-weight: bolder;
+  border: 2px solid tomato;
+}
