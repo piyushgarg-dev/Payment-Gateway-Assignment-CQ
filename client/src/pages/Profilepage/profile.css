@@ -26,3 +26,12 @@
   margin-top: 40px;
   justify-content: center;
 }
+
+@media only screen and (max-width: 600px) {
+  .profile-page-offers {
+    display: flex;
+  }
+  .offer-card {
+    flex: 1;
+  }
+}
