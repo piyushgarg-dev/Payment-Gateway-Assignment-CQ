@@ -31,7 +31,11 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            {user ? <Profile user={user} /> : <Login />}
+            {user ? (
+              <Profile user={user} />
+            ) : (
+              <Login onSuccessLogin={user => setUser(user)} />
+            )}
           </Route>
         </Switch>
       </BrowserRouter>

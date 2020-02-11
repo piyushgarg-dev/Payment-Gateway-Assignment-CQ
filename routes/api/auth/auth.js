@@ -47,7 +47,7 @@ router.post("/login", (req, res) => {
     User.findOne(email, async (err, dbUser) => {
       if (err) {
         let response = {
-          message: "fail",
+          message: "Something went wrong",
           user: undefined
         };
         res.status(400).json(response);
@@ -55,13 +55,24 @@ router.post("/login", (req, res) => {
         let dbUserPassword = dbUser.password;
         let match = await bcryptjs.compareSync(password, dbUserPassword);
         if (match) {
-        } else {
           let response = {
             message: "success",
             user: dbUser
           };
           res.status(200).json(response);
+        } else {
+          let response = {
+            message: "Incorrect Password",
+            user: undefined
+          };
+          res.status(400).json(response);
         }
+      } else if (!dbUser) {
+        let response = {
+          message: "User Not Found",
+          user: undefined
+        };
+        res.status(400).json(response);
       }
     });
   }

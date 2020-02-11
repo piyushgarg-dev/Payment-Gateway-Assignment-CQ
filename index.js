@@ -12,7 +12,7 @@ const app = express();
 
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cookieParser());
 
 // Logger
