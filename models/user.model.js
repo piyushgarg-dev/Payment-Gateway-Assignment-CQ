@@ -29,10 +29,12 @@ const UserSchema = mongoose.Schema({
     default: false
   },
   activeCredits: {
-    type: Number
+    type: Number,
+    default: 0
   },
   pendingCredits: {
-    type: Number
+    type: Number,
+    default: 0
   }
 });
 

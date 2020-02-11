@@ -13,6 +13,19 @@ function App() {
     method: "GET"
   };
 
+  const getUser = () => {
+    fetch("/api/auth/user", apiOptions)
+      .then(res => res.json())
+      .then(response => {
+        if (response.user) {
+          setUser(response.user);
+        } else {
+          setUser(null);
+        }
+      })
+      .catch(err => console.log(err));
+  };
+
   useEffect(() => {
     fetch("/api/auth/user", apiOptions)
       .then(res => res.json())
@@ -38,7 +51,11 @@ function App() {
             )}
           </Route>
           <Route exact path="/register">
-            <Register />
+            <Register
+              onSuceessSignup={user => {
+                window.location.href = "/";
+              }}
+            />
           </Route>
         </Switch>
       </BrowserRouter>

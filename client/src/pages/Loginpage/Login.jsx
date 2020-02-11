@@ -39,7 +39,7 @@ const Login = props => {
         <label className="form-label">Email</label>
         <input
           type="email"
-          onChange={value => setEmail(value)}
+          onChange={value => setEmail(value.target.value)}
           //   value={email}
           name="email"
           required
@@ -48,7 +48,7 @@ const Login = props => {
 
         <label className="form-label">Password</label>
         <input
-          onChange={value => setPassword(value)}
+          onChange={value => setPassword(value.target.value)}
           type="password"
           name="password"
           required
