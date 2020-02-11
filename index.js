@@ -34,6 +34,7 @@ mongoose
 //   ROUTES
 
 app.use("/api/auth", require("./routes/api/auth/auth"));
+app.use("/api/checkout", require("./routes/api/checkout/checkout"));
 
 // Listner
 app.listen(process.env.PORT, () => {

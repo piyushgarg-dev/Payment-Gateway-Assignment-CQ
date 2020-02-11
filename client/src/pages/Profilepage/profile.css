@@ -10,3 +10,19 @@
   text-align: center;
   font-weight: bolder;
 }
+.profile-page-offers {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.offer-card {
+  height: 60vh;
+  width: 40%;
+  border: 6px solid #343a40;
+}
+.profile-page-stripe-button {
+  max-width: 150px;
+  margin: auto;
+  margin-top: 40px;
+  justify-content: center;
+}
