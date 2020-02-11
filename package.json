@@ -8,7 +8,8 @@
     "install-client": "npm install --prefix client",
     "install-server": "npm install",
     "client": "npm start --prefix client",
-    "server": "node index"
+    "server": "node index",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",

@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
+const path = require("path");
 
 // Initalize App
 const app = express();
@@ -17,6 +18,13 @@ app.use(cookieParser());
 
 // Logger
 app.use(morgan("combined"));
+
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 // MongoDB Connect
 mongoose
