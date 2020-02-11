@@ -37,6 +37,9 @@ function App() {
               <Login onSuccessLogin={user => setUser(user)} />
             )}
           </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>

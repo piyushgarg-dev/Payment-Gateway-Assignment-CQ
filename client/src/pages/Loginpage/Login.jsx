@@ -22,6 +22,7 @@ const Login = props => {
           setError(response.message);
         } else {
           if (response.user) {
+            setError("");
             props.onSuccessLogin(response.user);
           }
         }
@@ -55,12 +56,15 @@ const Login = props => {
           className="form-input"
         />
 
-        <input
+        <button
           onClick={handelFormSubmit}
-          type="submit"
-          value="LOGIN"
           className="login-form-submit form-input"
-        />
+        >
+          LOGIN
+        </button>
+      </div>
+      <div className="login-page-link">
+        <a href="/register">Create Account</a>
       </div>
     </div>
   );
