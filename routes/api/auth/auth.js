@@ -43,9 +43,11 @@ router.get("/user", (req, res) => {
 // @Desc: Checks User in DB and Sets Cookie [JWT]
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
   if (email && password) {
-    User.findOne(email, async (err, dbUser) => {
+    User.findOne({ email }, async (err, dbUser) => {
       if (err) {
+        console.log(err);
         let response = {
           message: "Something went wrong",
           user: undefined
