@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const chalk = require("chalk");
+const bcryptjs = require("bcryptjs");
 // Models
 const User = require("../../../models/user.model");
 
@@ -40,6 +41,30 @@ router.get("/user", (req, res) => {
 // @ Route: /api/auth/login
 // @Method: POST
 // @Desc: Checks User in DB and Sets Cookie [JWT]
-router.post("/login", (req, res) => {});
+router.post("/login", (req, res) => {
+  const { email, password } = req.body;
+  if (email && password) {
+    User.findOne(email, async (err, dbUser) => {
+      if (err) {
+        let response = {
+          message: "fail",
+          user: undefined
+        };
+        res.status(400).json(response);
+      } else if (dbUser) {
+        let dbUserPassword = dbUser.password;
+        let match = await bcryptjs.compareSync(password, dbUserPassword);
+        if (match) {
+        } else {
+          let response = {
+            message: "success",
+            user: dbUser
+          };
+          res.status(200).json(response);
+        }
+      }
+    });
+  }
+});
 
 module.exports = router;
